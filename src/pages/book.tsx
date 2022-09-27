@@ -52,7 +52,7 @@ const Home: NextPage = () => {
                             <div className="flex items-center gap-2">
                                 <Image
                                     src={session.user.image}
-                                    alt="s"
+                                    alt=""
                                     width={36}
                                     height={36}
                                     style={{ borderRadius: "50%" }}
