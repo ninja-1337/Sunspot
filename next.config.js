@@ -10,6 +10,7 @@ module.exports = withPWA({
       "cdn.discordapp.com",
       "us-east-1.tixte.net",
       "raw.githubusercontent.com",
+        "lh3.googleusercontent.com",
     ],
   },
   dest: "public",
