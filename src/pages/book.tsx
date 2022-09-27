@@ -51,7 +51,7 @@ const Home: NextPage = () => {
                         {session?.user?.image && (
                             <div className="flex items-center gap-2">
                                 <Image
-                                    src={session.user?.image}
+                                    src={session.user.image}
                                     alt="s"
                                     width={36}
                                     height={36}
