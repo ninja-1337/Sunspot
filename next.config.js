@@ -11,14 +11,14 @@ module.exports = withPWA({
         protocol: 'https',
         hostname: 'https://lh3.googleusercontent.com',
         port: '',
-        pathname: '/a/',
+        pathname: '/a/**',
       },
 
       {
         protocol: 'https',
         hostname: 'https://cdn.discordapp.com',
         port: '',
-        pathname: '/avatars/',
+        pathname: '/avatars/**',
       },
     ],
   },
