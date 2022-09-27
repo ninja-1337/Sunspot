@@ -43,6 +43,20 @@ const Home: NextPage = () => {
 
 
             <main className="container mx-auto flex flex-col items-center justify-center min-h-screen p-4">
+                {session?.user?.image && (
+                    <div className="flex items-center gap-2">
+                        <Image
+                            src={session.user?.image}
+                            alt="s"
+                            width={36}
+                            height={36}
+                            style={{ borderRadius: "50%" }}
+                        />
+
+                        <p>- Signed in as {session.user.name}</p>
+                    </div>
+                )}
+
                 {session ? (
                     <div>
                     <div className="pt-6 text-1xl text-blue-500 flex justify-center items-center w-full">
