@@ -2,7 +2,9 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import { trpc } from "../utils/trpc";
 import  TechnologyCard  from "../components/TechnologyCard";
-import Link from "next/link";
+import link from "next/link";
+import { signIn, signOut, useSession } from "next-auth/react";
+
 
 type TechnologyCardProps = {
   name: string;
@@ -11,8 +13,8 @@ type TechnologyCardProps = {
 };
 
 const Home: NextPage = () => {
-  const hello = trpc.useQuery(["example.hello", { text: "from tRPC" }]);
-
+  const { data: session, status } = useSession();
+  // @ts-ignore
   return (
     <>
 
@@ -46,7 +48,30 @@ const Home: NextPage = () => {
               documentation="/book"
           />
           </div>
-        </main>
+        {session ? (
+            <div>
+              <p>hi {session.user?.name}</p>
+
+              <button onClick={() => signOut()}>
+                Logout
+              </button>
+            </div>
+        ) : (
+          <div>
+            <div>
+              <button onClick={() => signIn("discord")}>
+                Login with Discord
+              </button>
+            </div>
+            <div>
+              <button onClick={() => signIn("google")}>
+                Login with Google
+              </button>
+            </div>
+          </div>
+        )}
+
+      </main>
     </>
   );
 };

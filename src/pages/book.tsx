@@ -5,10 +5,12 @@ import {trpc} from "../utils/trpc";
 import TechnologyCard from "../components/TechnologyCard";
 import BedGrid from "../components/bedgrid";
 import sunbed from "/src/images/sunbeds.jpg";
-import Image from "next/image"
+
 import Sunbed from "../components/Sunbed";
 import SunbedBooked from "../components/SunbedBooked";
 import {useState} from "react";
+import {signIn, signOut, useSession} from "next-auth/react";
+import Image from "next/image";
 type TechnologyCardProps = {
     name: string;
     description: string;
@@ -29,6 +31,8 @@ const Home: NextPage = () => {
     const multi = [[ false,  false, false, true, true, false, true, false, false, true, false,, false, true, false,, false, true, false,], [ false, true, false, true,  true, false, true, true, false, true, true,], [false, true, false, true, true, true,  true, true, true, true, true,], [ true, true,  true, true, true, true, true, true, false, true, false]]
 
 
+    const { data: session, status } = useSession();
+    // @ts-ignore
     return (
         <>
             <Head>
@@ -37,8 +41,37 @@ const Home: NextPage = () => {
                 <link rel="icon" href="/favicon.ico"/>
             </Head>
 
+
             <main className="container mx-auto flex flex-col items-center justify-center min-h-screen p-4">
+                {session ? (
+                    <div>
+                    <div className="pt-6 text-1xl text-blue-500 flex justify-center items-center w-full">
+                        <h3>Welcome {session.user?.name}</h3>
+
+                    </div>
+<div className="pt-6 text-1xl text-blue-500 flex justify-center items-center w-full">
+                        <button onClick={() => signOut()}>
+                            Logout
+                        </button>
+</div>
+                    </div>
+                ) : (
+                    <div >
+                        <div className="pt-6 text-1xl text-blue-500 flex justify-center items-center w-full">
+                            <button onClick={() => signIn("discord")}>
+                                Login with Discord
+                            </button>
+                        </div>
+                        <div className="pt-6 text-1xl text-blue-500 flex justify-center items-center w-full">
+                            <button onClick={() => signIn("google")}>
+                                Login with Google
+                            </button>
+                        </div>
+                    </div>
+                )}
+
                 <div className="pt-6 text-2xl text-blue-500 flex justify-center items-center w-full">
+
                     <p>Book a SunBed</p>
                 </div>
 

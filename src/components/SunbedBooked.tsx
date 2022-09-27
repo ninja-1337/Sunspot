@@ -2,7 +2,6 @@ import  Link  from "next/link";
 import sunbedbooked from "/images/booked.jpg"
 import Image from "next/image";
 import {useState} from "react";
-import {h} from "preact";
 
 const Sunbed = () => {
 

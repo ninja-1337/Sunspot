@@ -1,9 +1,6 @@
 import  Link  from "next/link";
 import sunbed from "/images/sunbed-with-umbrella-flat-icon-cartoon-vector-15332750.jpg"
 import Image from "next/image";
-import sunbedimg from "*.jpg";
-import { MDBRipple } from 'mdb-react-ui-kit';
-import {number} from "prop-types";
 import {useState} from "react";
 
 const handleClick = () =>{
@@ -21,7 +18,7 @@ const Sunbed = () => {
 
         <Image
             src={sunbed}
-            alt="Picture of the author"
+            alt="Picture of the sunbed"
             width={width}
             height={height}
             onClick={handleClick}

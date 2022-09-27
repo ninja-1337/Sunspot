@@ -27,11 +27,6 @@ const Home: NextPage = () => {
           About<span className="text-purple-300"> Page</span>
         </h1>
         <div className="grid gap-3 pt-3 mt-3 text-center md:grid-cols-2 lg:w-2/3">
-          <TechnologyCard
-            name="Instant"
-            description="We are a team dedicated to alleviating the heat"
-            documentation=""
-          />
 
           <TechnologyCard
               name="Avoid the Heat"
