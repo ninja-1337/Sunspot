@@ -2,13 +2,12 @@
 import type {NextPage} from "next";
 import Head from "next/head";
 import {trpc} from "../utils/trpc";
+
 import TechnologyCard from "../components/TechnologyCard";
-import BedGrid from "../components/bedgrid";
-import sunbed from "/src/images/sunbeds.jpg";
 
 import Sunbed from "../components/Sunbed";
 import SunbedBooked from "../components/SunbedBooked";
-import {useState} from "react";
+
 import {signIn, signOut, useSession} from "next-auth/react";
 import Image from "next/image";
 type TechnologyCardProps = {
@@ -30,8 +29,8 @@ const Home: NextPage = () => {
 
     const multi = [[ false,  false, false, true, true, false, true, false, false, true, false,, false, true, false,, false, true, false,], [ false, true, false, true,  true, false, true, true, false, true, true,], [false, true, false, true, true, true,  true, true, true, true, true,], [ true, true,  true, true, true, true, true, true, false, true, false]]
 
-
     const { data: session, status } = useSession();
+
     // @ts-ignore
     return (
         <>
@@ -51,7 +50,7 @@ const Home: NextPage = () => {
                         {session?.user?.image && (
                             <div className="flex items-center gap-2">
                                 <Image
-                                    src={session.user.image}
+                                    src={session?.user.image}
                                     alt=""
                                     width={36}
                                     height={36}
