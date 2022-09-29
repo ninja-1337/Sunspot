@@ -10,22 +10,20 @@ function NavBar() {
       <div className="  items-start"></div>
       <div className="flex  item-start "></div>
       {session ? (
-        <div>
-          <div className="pt-6 text-1xl text-blue-500 flex justify-center items-center">
-            {session?.user?.image && (
-              <div className="flex items-center ">
-                <Image
-                  src={session?.user.image}
-                  alt=""
-                  width={36}
-                  height={36}
-                  style={{ borderRadius: "50%" }}
-                />
-                - Signed in as {session.user.name}
-                <button onClick={() => signOut()}>Logout</button>
-              </div>
-            )}
-          </div>
+        <div className="pt-6 text-1xl text-blue-500 flex justify-center items-center">
+          {session?.user?.image && (
+            <div className="flex items-center ">
+              <Image
+                src={session?.user.image}
+                alt=""
+                width={36}
+                height={36}
+                style={{ borderRadius: "50%" }}
+              />
+              {session.user.name}
+              <button onClick={() => signOut()}>Logout</button>
+            </div>
+          )}
         </div>
       ) : (
         <>
