@@ -46,37 +46,23 @@ function DropDownLogin() {
                     </div>
                   ) : (
                     <>
-                      <div
-                        className={`${
-                          active &&
-                          "bg-amber-200 rounded align-middle justify-center"
-                        }`}
-                      >
-                        <Menu.Item>
-                          <button onClick={() => signIn("discord")}>
-                            <SocialIcon
-                              network="discord"
-                              style={{ height: 25, width: 25 }}
-                            />
-                          </button>
-                        </Menu.Item>
-                      </div>
+                      <Menu.Item>
+                        <button onClick={() => signIn("discord")}>
+                          <SocialIcon
+                            network="discord"
+                            style={{ height: 25, width: 25 }}
+                          />
+                        </button>
+                      </Menu.Item>
 
-                      <div
-                        className={`${
-                          active &&
-                          "bg-amber-200 rounded align-middle justify-center"
-                        }`}
-                      >
-                        <Menu.Item>
-                          <button onClick={() => signIn("google")}>
-                            <SocialIcon
-                              network="google"
-                              style={{ height: 25, width: 25 }}
-                            />
-                          </button>
-                        </Menu.Item>
-                      </div>
+                      <Menu.Item>
+                        <button onClick={() => signIn("google")}>
+                          <SocialIcon
+                            network="google"
+                            style={{ height: 25, width: 25 }}
+                          />
+                        </button>
+                      </Menu.Item>
                     </>
                   )}
                 </>
