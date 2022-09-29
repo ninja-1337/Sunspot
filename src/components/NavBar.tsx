@@ -13,7 +13,13 @@ function NavBar() {
   return (
     <nav className="flex items-center justify-between flex-wrap w-full bg-stone-800 p-3 ">
       <div className="  items-start">
-        <Image src={sunbed} alt="Logo" width="40" height="40" />
+        <Image
+          src={sunbed}
+          alt="Logo"
+          width="40"
+          height="40"
+          className="RoundedImage"
+        />
       </div>
 
       <div className="  items-start">
