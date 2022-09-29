@@ -32,9 +32,14 @@ function DropDownLogin() {
                 {session ? (
                   <div className="pt-6 text-1xl text-blue-500 flex justify-center items-center">
                     {session?.user?.image && (
-                      <div className="flex items-center ">
-                        <button onClick={() => signOut()}>Logout</button>
-                      </div>
+                      <>
+                        <div className="flex items-center ">
+                          <button onClick={() => signOut()}>Logout</button>
+                        </div>
+                        <div className="flex items-center ">
+                          <button>My Profile</button>
+                        </div>
+                      </>
                     )}
                   </div>
                 ) : (
