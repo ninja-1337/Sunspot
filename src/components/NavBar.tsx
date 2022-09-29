@@ -22,11 +22,9 @@ function NavBar() {
                   style={{ borderRadius: "50%" }}
                 />
                 - Signed in as {session.user.name}
+                <button onClick={() => signOut()}>Logout</button>
               </div>
             )}
-          </div>
-          <div className=" text-blue-500 flex justify-center items-center ">
-            <button onClick={() => signOut()}>Logout</button>
           </div>
         </div>
       ) : (
