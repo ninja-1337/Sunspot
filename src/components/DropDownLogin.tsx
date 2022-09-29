@@ -36,9 +36,10 @@ function DropDownLogin() {
                         <div className="flex items-center ">
                           <button onClick={() => signOut()}>Logout</button>
                         </div>
-                        <div className="flex items-center ">
+
+                        <Menu.Item>
                           <button>My Profile</button>
-                        </div>
+                        </Menu.Item>
                       </>
                     )}
                   </div>
