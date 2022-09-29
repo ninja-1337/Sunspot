@@ -15,7 +15,7 @@ function MyDropdown() {
                 className={`${
                   active && "bg-amber-200 rounded align-middle justify-center"
                 }`}
-                href="/account-settings"
+                ref="/account-settings"
               >
                 DAO
               </div>

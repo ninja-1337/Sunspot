@@ -39,7 +39,7 @@ function DropDownLogin() {
                       active &&
                       "bg-amber-200 rounded align-middle justify-center"
                     }`}
-                    href="/account-settings"
+                    ref="/account-settings"
                   >
                     <Menu.Item>
                       <button onClick={() => signIn("discord")}>
@@ -56,7 +56,7 @@ function DropDownLogin() {
                       active &&
                       "bg-amber-200 rounded align-middle justify-center"
                     }`}
-                    href="/account-settings"
+                    ref="/account-settings"
                   >
                     <Menu.Item>
                       <button onClick={() => signIn("google")}>
