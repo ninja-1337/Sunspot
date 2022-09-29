@@ -14,7 +14,7 @@ function DropDownLogin() {
         </Menu.Button>
 
         <Menu.Items className="absolute right-0 mt- justify-center align-middle w-32 origin-center  divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-          {({ active }) => (
+          {() => (
             <>
               {session ? (
                 <div className="pt-6 text-1xl text-blue-500 flex justify-center items-center">
@@ -35,10 +35,7 @@ function DropDownLogin() {
               ) : (
                 <>
                   <div
-                    className={`${
-                      active &&
-                      "bg-amber-200 rounded align-middle justify-center"
-                    }`}
+                    className={`${"bg-amber-200 rounded align-middle justify-center"}`}
                     ref="/account-settings"
                   >
                     <Menu.Item>
@@ -52,10 +49,7 @@ function DropDownLogin() {
                   </div>
 
                   <div
-                    className={`${
-                      active &&
-                      "bg-amber-200 rounded align-middle justify-center"
-                    }`}
+                    className={`${"bg-amber-200 rounded align-middle justify-center"}`}
                     ref="/account-settings"
                   >
                     <Menu.Item>
