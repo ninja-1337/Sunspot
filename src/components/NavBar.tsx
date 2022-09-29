@@ -18,7 +18,7 @@ function NavBar() {
           alt="Logo"
           width="40"
           height="40"
-          className="RoundedImage"
+          style={{ borderRadius: "50%" }}
         />
       </div>
 
