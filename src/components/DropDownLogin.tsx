@@ -81,6 +81,10 @@ function DropDownLogin() {
               </>
             )}
           </Menu.Item>
+
+          <Menu.Item>
+            {session?.user?.image && <button>My Profile</button>}
+          </Menu.Item>
         </Menu.Items>
       </Menu>
     </div>
