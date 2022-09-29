@@ -2,7 +2,6 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import { trpc } from "../utils/trpc";
-import Header from "/src/components/Header";
 import TechnologyCard from "../components/TechnologyCard";
 import NavBar from "../components/NavBar";
 import Sunbed from "../components/Sunbed";
