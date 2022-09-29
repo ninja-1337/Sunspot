@@ -20,7 +20,6 @@ function DropDownLogin() {
                 style={{ borderRadius: "50%" }}
               />
               {session.user.name}
-              <button onClick={() => signOut()}>-Logout</button>
             </div>
           )}
           {!session?.user?.image && <>Login</>}
