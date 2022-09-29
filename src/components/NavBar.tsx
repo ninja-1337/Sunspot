@@ -7,12 +7,6 @@ import { Fragment } from "react";
 import MyDropdown from "../components/DropDown";
 import Loginwith from "../components/Login";
 import DropDownLogin from "../components/DropDownLogin";
-const links = [
-  { href: "/account-settings", label: "Account settings" },
-  { href: "/support", label: "Support" },
-  { href: "/license", label: "License" },
-  { href: "/sign-out", label: "Sign out" },
-];
 
 function NavBar() {
   const { data: session, status } = useSession();
@@ -20,7 +14,6 @@ function NavBar() {
     <nav className="flex items-center justify-between flex-wrap w-full bg-stone-800 p-3 ">
       <div className="  items-start"></div>
       <div className="flex  item-start ">
-        <MyDropdown />
         <DropDownLogin />
       </div>
     </nav>
