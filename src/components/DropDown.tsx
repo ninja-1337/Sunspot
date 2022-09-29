@@ -9,7 +9,9 @@ function MyDropdown() {
         </Menu.Button>
 
         <Menu.Items className="absolute right-0 mt- justify-center align-middle w-32 origin-center  divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-          <Menu.Item></Menu.Item>
+          <Menu.Item>
+            <button>Menu Item</button>
+          </Menu.Item>
         </Menu.Items>
       </Menu>
     </div>
