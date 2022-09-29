@@ -21,10 +21,11 @@ function NavBar() {
           style={{ borderRadius: "50%" }}
         />
       </div>
-
+      {/* 
       <div className="  items-start">
         <MyDropdown />
-      </div>
+      </div> */}
+
       <div className="flex  item-start ">
         <DropDownLogin />
       </div>
