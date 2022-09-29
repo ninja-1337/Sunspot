@@ -2,81 +2,27 @@ import React from "react";
 import { SocialIcon } from "react-social-icons";
 import Image from "next/image";
 import { signIn, signOut, useSession } from "next-auth/react";
+import { Menu } from "@headlessui/react";
+import { Fragment } from "react";
+import MyDropdown from "../components/DropDown";
+import Loginwith from "../components/Login";
+import DropDownLogin from "../components/DropDownLogin";
+const links = [
+  { href: "/account-settings", label: "Account settings" },
+  { href: "/support", label: "Support" },
+  { href: "/license", label: "License" },
+  { href: "/sign-out", label: "Sign out" },
+];
 
 function NavBar() {
   const { data: session, status } = useSession();
   return (
     <nav className="flex items-center justify-between flex-wrap w-full bg-stone-800 p-3 ">
       <div className="  items-start"></div>
-      <div className="dropdown">
-        <button
-          className="btn btn-secondary dropdown-toggle"
-          type="button"
-          id="dropdownMenuButton2"
-          data-bs-toggle="dropdown"
-          aria-expanded="false"
-        >
-          Dropdown button
-        </button>
-        <ul
-          className="dropdown-menu dropdown-menu-dark"
-          aria-labelledby="dropdownMenuButton2"
-        >
-          <li>
-            <a className="dropdown-item active" href="#">
-              Action
-            </a>
-          </li>
-          <li>
-            <a className="dropdown-item" href="#">
-              Another action
-            </a>
-          </li>
-          <li>
-            <a className="dropdown-item" href="#">
-              Something else here
-            </a>
-          </li>
-          <li>
-            <hr className="dropdown-divider"></hr>
-          </li>
-          <li>
-            <a className="dropdown-item" href="#">
-              Separated link
-            </a>
-          </li>
-        </ul>
+      <div className="flex  item-start ">
+        <MyDropdown />
+        <DropDownLogin />
       </div>
-      <div className="flex  item-start "></div>
-      {session ? (
-        <div className="pt-2 text-1xl text-blue-500 flex justify-center items-center">
-          {session?.user?.image && (
-            <div className="flex items-center ">
-              <Image
-                src={session?.user.image}
-                alt=""
-                width={36}
-                height={36}
-                style={{ borderRadius: "50%" }}
-              />
-              {session.user.name}
-              <button onClick={() => signOut()}>-Logout</button>
-            </div>
-          )}
-        </div>
-      ) : (
-        <>
-          <div>
-            <button onClick={() => signIn("discord")}>
-              <SocialIcon network="discord" style={{ height: 25, width: 25 }} />
-            </button>
-
-            <button onClick={() => signIn("google")}>
-              <SocialIcon network="google" style={{ height: 25, width: 25 }} />
-            </button>
-          </div>
-        </>
-      )}
     </nav>
   );
 }
