@@ -10,16 +10,7 @@ function MyDropdown() {
 
         <Menu.Items className="absolute right-0 mt- justify-center align-middle w-32 origin-center  divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
           <Menu.Item>
-            {({ active }) => (
-              <div
-                className={`${
-                  active && "bg-amber-200 rounded align-middle justify-center"
-                }`}
-                ref="/account-settings"
-              >
-                DAO
-              </div>
-            )}
+            <div>Menu Item</div>
           </Menu.Item>
         </Menu.Items>
       </Menu>
