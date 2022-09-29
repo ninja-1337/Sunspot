@@ -8,9 +8,48 @@ function NavBar() {
   return (
     <nav className="flex items-center justify-between flex-wrap w-full bg-stone-800 p-3 ">
       <div className="  items-start"></div>
+      <div className="dropdown">
+        <button
+          className="btn btn-secondary dropdown-toggle"
+          type="button"
+          id="dropdownMenuButton2"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          Dropdown button
+        </button>
+        <ul
+          className="dropdown-menu dropdown-menu-dark"
+          aria-labelledby="dropdownMenuButton2"
+        >
+          <li>
+            <a className="dropdown-item active" href="#">
+              Action
+            </a>
+          </li>
+          <li>
+            <a className="dropdown-item" href="#">
+              Another action
+            </a>
+          </li>
+          <li>
+            <a className="dropdown-item" href="#">
+              Something else here
+            </a>
+          </li>
+          <li>
+            <hr className="dropdown-divider"></hr>
+          </li>
+          <li>
+            <a className="dropdown-item" href="#">
+              Separated link
+            </a>
+          </li>
+        </ul>
+      </div>
       <div className="flex  item-start "></div>
       {session ? (
-        <div className="pt-6 text-1xl text-blue-500 flex justify-center items-center">
+        <div className="pt-2 text-1xl text-blue-500 flex justify-center items-center">
           {session?.user?.image && (
             <div className="flex items-center ">
               <Image
@@ -21,7 +60,7 @@ function NavBar() {
                 style={{ borderRadius: "50%" }}
               />
               {session.user.name}
-              <button onClick={() => signOut()}>Logout</button>
+              <button onClick={() => signOut()}>-Logout</button>
             </div>
           )}
         </div>
