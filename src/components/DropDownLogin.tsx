@@ -14,57 +14,63 @@ function DropDownLogin() {
         </Menu.Button>
 
         <Menu.Items className="absolute right-0 mt- justify-center align-middle w-32 origin-center  divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-          {() => (
-            <>
-              {session ? (
-                <div className="pt-6 text-1xl text-blue-500 flex justify-center items-center">
-                  {session?.user?.image && (
-                    <div className="flex items-center ">
-                      <Image
-                        src={session?.user.image}
-                        alt=""
-                        width={36}
-                        height={36}
-                        style={{ borderRadius: "50%" }}
-                      />
-                      {session.user.name}
-                      <button onClick={() => signOut()}>-Logout</button>
+          <Menu.Item>
+            {({ active }) => (
+              <>
+                {session ? (
+                  <div className="pt-6 text-1xl text-blue-500 flex justify-center items-center">
+                    {session?.user?.image && (
+                      <div className="flex items-center ">
+                        <Image
+                          src={session?.user.image}
+                          alt=""
+                          width={36}
+                          height={36}
+                          style={{ borderRadius: "50%" }}
+                        />
+                        {session.user.name}
+                        <button onClick={() => signOut()}>-Logout</button>
+                      </div>
+                    )}
+                  </div>
+                ) : (
+                  <>
+                    <div
+                      className={`${
+                        active &&
+                        "bg-amber-200 rounded align-middle justify-center"
+                      }`}
+                    >
+                      <Menu.Item>
+                        <button onClick={() => signIn("discord")}>
+                          <SocialIcon
+                            network="discord"
+                            style={{ height: 25, width: 25 }}
+                          />
+                        </button>
+                      </Menu.Item>
                     </div>
-                  )}
-                </div>
-              ) : (
-                <>
-                  <div
-                    className={`${"bg-amber-200 rounded align-middle justify-center"}`}
-                    ref="/account-settings"
-                  >
-                    <Menu.Item>
-                      <button onClick={() => signIn("discord")}>
-                        <SocialIcon
-                          network="discord"
-                          style={{ height: 25, width: 25 }}
-                        />
-                      </button>
-                    </Menu.Item>
-                  </div>
 
-                  <div
-                    className={`${"bg-amber-200 rounded align-middle justify-center"}`}
-                    ref="/account-settings"
-                  >
-                    <Menu.Item>
-                      <button onClick={() => signIn("google")}>
-                        <SocialIcon
-                          network="google"
-                          style={{ height: 25, width: 25 }}
-                        />
-                      </button>
-                    </Menu.Item>
-                  </div>
-                </>
-              )}
-            </>
-          )}
+                    <div
+                      className={`${
+                        active &&
+                        "bg-amber-200 rounded align-middle justify-center"
+                      }`}
+                    >
+                      <Menu.Item>
+                        <button onClick={() => signIn("google")}>
+                          <SocialIcon
+                            network="google"
+                            style={{ height: 25, width: 25 }}
+                          />
+                        </button>
+                      </Menu.Item>
+                    </div>
+                  </>
+                )}
+              </>
+            )}
+          </Menu.Item>
         </Menu.Items>
       </Menu>
     </div>
