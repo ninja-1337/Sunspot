@@ -14,6 +14,7 @@ function NavBar() {
     <nav className="flex items-center justify-between flex-wrap w-full bg-stone-800 p-3 ">
       <div className="  items-start"></div>
       <div className="flex  item-start ">
+        <MyDropdown />
         <DropDownLogin />
       </div>
     </nav>
