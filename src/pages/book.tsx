@@ -2,6 +2,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import { trpc } from "../utils/trpc";
+import Header from "/src/components/Header";
 import TechnologyCard from "../components/TechnologyCard";
 import NavBar from "../components/NavBar";
 import Sunbed from "../components/Sunbed";
@@ -65,7 +66,7 @@ const Home: NextPage = () => {
       </Head>
       <NavBar />
 
-      <main className="container mx-auto flex flex-col items-center  min-h-screen p-2">
+      <main className="container mx-auto flex flex-col items-center justify-center min-h-screen p-4">
         <div className="pt-6 text-2xl text-blue-500 flex justify-center items-center w-full">
           <p>Book a SunBed</p>
         </div>
