@@ -13,6 +13,14 @@ function NavBar() {
   return (
     <nav className="flex items-center justify-between flex-wrap w-full bg-stone-800 p-3 ">
       <div className="  items-start">
+        <svg
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+          className="fill-current text-white h-8 w-8 mr-2"
+        ></svg>
+      </div>
+
+      <div className="  items-start">
         <MyDropdown />
       </div>
       <div className="flex  item-start ">
