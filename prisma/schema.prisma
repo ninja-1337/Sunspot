@@ -56,7 +56,20 @@ model User {
   image         String?
   accounts      Account[]
   sessions      Session[]
+   guestbook     guestbook[] @relation("guest")
+     messages      message[]   @relation("post")
 }
+
+model message {
+  id         String   @id @default(cuid())
+  email      String
+  body       String
+  userId     String
+  created_at DateTime @default(now())
+  updated_at DateTime @default(now())
+  sent_by    User     @relation("post", fields: [userId], references: [id])
+}
+
 
 model VerificationToken {
   identifier String
@@ -64,4 +77,14 @@ model VerificationToken {
   expires    DateTime
 
   @@unique([identifier, token])
+}
+
+model guestbook {
+  id         String   @id @default(cuid())
+  email      String
+  body       String
+  userId     String
+  created_at DateTime @default(now())
+  updated_at DateTime @default(now())
+  created_by User     @relation("guest", fields: [userId], references: [id])
 }

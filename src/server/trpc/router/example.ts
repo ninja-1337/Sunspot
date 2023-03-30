@@ -7,10 +7,14 @@ export const exampleRouter = router({
     .input(z.object({ text: z.string().nullish() }).nullish())
     .query(({ input }) => {
       return {
-        greeting: `Hello ${input?.text ?? "world"}`,
+        greeting: `Under Construction`,
       };
     }),
   getAll: publicProcedure.query(({ ctx }) => {
-    return ctx.prisma.example.findMany();
+    return ctx.prisma.guestbook.findMany({
+      include: {
+        created_by: true, // Return all fields
+      },
+    });
   }),
 });
