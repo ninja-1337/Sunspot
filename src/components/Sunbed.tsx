@@ -2,10 +2,18 @@ import Link from "next/link";
 import sunbed from "/images/sunbed-with-umbrella-flat-icon-cartoon-vector-15332750.jpg";
 import Image from "next/image";
 import { useState } from "react";
-
+import { ToastContainer, toast } from 'react-toastify';
 const handleClick = () => {
-  //
-  alert("Add this bed to Cart");
+  toast('Sunbed added to cart', {
+    position: "top-right",
+    autoClose: 3000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+    theme: "light",
+    });
 };
 
 const Sunbed = () => {
@@ -19,6 +27,7 @@ const Sunbed = () => {
       width={width}
       height={height}
       onClick={() => {
+        handleClick()
         setHeight(80);
       }}
       onMouseOver={() => {

@@ -2,10 +2,19 @@ import Link from "next/link";
 import sunbedbooked from "/images/booked.jpg";
 import Image from "next/image";
 import { useState } from "react";
-
+import { ToastContainer, toast } from 'react-toastify';
 const Sunbed = () => {
   const handleClick = () => {
-    alert("This Sunbed is Booked");
+    toast.error('This Sunbed is Booked', {
+      position: "top-right",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+      });
   };
 
   const [width, setCount] = useState(40);

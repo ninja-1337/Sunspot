@@ -7,7 +7,7 @@ import TechnologyCard from "../components/TechnologyCard";
 
 import Sunbed from "../components/Sunbed";
 import SunbedBooked from "../components/SunbedBooked";
-
+import { ToastContainer, toast } from 'react-toastify';
 import { signIn, signOut, useSession } from "next-auth/react";
 import Image from "next/image";
 type TechnologyCardProps = {
@@ -29,6 +29,19 @@ const style: any = {
 };
 
 const Home: NextPage = () => {
+  const handleClick = () => {
+    toast('Feature in Development', {
+      position: "top-right",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+      });
+  };
+  
   const multi = [
     [
       false,
@@ -87,17 +100,14 @@ const Home: NextPage = () => {
           );
         })}
 
-        <div className="mt-2 grid gap-2 pt-2 text-center md:grid-cols-2 lg:w-2/3">
-          <TechnologyCard
-            name="Book Sunbeds"
-            description=""
-            documentation="/book"
-          />
-          <TechnologyCard
-            name="Back to Home"
-            description=""
-            documentation="/"
-          />
+        <div className="mt-2 grid gap-2 pt-2 text-center md:grid-cols-1 lg:w-1/3">
+        <button
+        className="rounded-full bg-orange-300 px-10 py-3 font-semibold text-white no-underline transition hover:bg-orange/20"
+        onClick={handleClick}
+      >
+       Pay Now
+      </button>
+   
         </div>
       </main>
     </>
