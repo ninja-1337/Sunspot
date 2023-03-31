@@ -74,8 +74,8 @@ const Home: NextPage = () => {
 
   return (
     <>
-      <main className="container mx-auto flex min-h-screen flex-col items-center justify-center p-4">
-        <div className="flex w-full items-center justify-center pt-6 text-2xl text-blue-500">
+   
+        <div className="flex w-full items-center justify-center text-2xl pt text-blue-500">
           <p>Book a SunBed</p>
         </div>
 
@@ -99,17 +99,18 @@ const Home: NextPage = () => {
             </div>
           );
         })}
-
-        <div className="mt-2 grid gap-2 pt-2 text-center md:grid-cols-1 lg:w-1/3">
-        <button
+         <div className=" flex  items-center justify-center  pt-2 ">
+    <button
         className="rounded-full bg-orange-300 px-10 py-3 font-semibold text-white no-underline transition hover:bg-orange/20"
         onClick={handleClick}
       >
        Pay Now
       </button>
    
+       
+    
         </div>
-      </main>
+      
     </>
   );
 };
