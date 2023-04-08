@@ -121,10 +121,6 @@ function NavBar() {
                 <Link href="/settings">My Settings</Link>
               </Dropdown.Item>
 
-              <Dropdown.Item key="analytics" withDivider>
-                <Link href="/chats">Saved Chats</Link>
-              </Dropdown.Item>
-
               <Dropdown.Item key="logout" withDivider color="error">
                 <div>
                   {session?.user?.image && (
@@ -178,9 +174,7 @@ function NavBar() {
           </Link>
         </Navbar.CollapseItem>
         <Navbar.CollapseItem key="Projects" activeColor="warning">
-          <Link color="inherit" href="/chats" onClick={() => HandleSideMenu()}>
-            Saved Chats
-          </Link>
+        
         </Navbar.CollapseItem>
         <Navbar.CollapseItem key="About" activeColor="warning">
           <Link color="inherit" href="/about" onClick={() => HandleSideMenu()}>
