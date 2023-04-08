@@ -62,6 +62,15 @@ export const authRouter = router({
         },
       });
     }),
-
+    updateDiscoverable: protectedProcedure
+    .input(z.boolean())
+    .mutation(async ({ ctx, input }) => {
+      const post = await prisma.user.update({
+        where: {
+          id: ctx.session.user.id,
+        },
+        data: { discoverable: input },
+      });
+    }),
  
 });
